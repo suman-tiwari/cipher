@@ -7,7 +7,7 @@ def my_ceaser_cipher(str, shift)
             new_str << charr
         else
             diff = 122 - ascii_val
-            actual_shift = (shift - diff)%26
+            actual_shift = ((shift - diff)%26).abs
             final_ascii = actual_shift == 0 ? 122 : (97 + actual_shift - 1)
             if down_charr == charr 
                 new_str << final_ascii.chr
